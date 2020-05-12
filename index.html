@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles/style.css">
+<script src="geodata.txt"></script> 
+<script src="functions.txt"></script>  
+</head>
+<html>
+<body onresize="FixGrid()">
+
+<div class="container" id='container' style='width:100%'; height:100%;'>
+<div id='gameboard' style='width:100%'; height:100%;'>
+
+<table class='myt' id='myt' width='100%' height='100%'cellpadding='4' cellspacing='0'>
+<tr>
+<td colspan='2' class='trow2' align='center' height='54' align='center'>
+	<div style="background-color: #525252; width:5%; height:54px; float:left;" >&nbsp;</div>
+	<div id='td7'>Μαθαίνω τους Νομούς της Ελλάδας</div>
+	<div style="background-color: #525252;; width:5%; height:54px; float:left; display:flex; justify-content: center; align-items: center;" >   
+		<img style="cursor: pointer;" src='images/menu2.png' width='32' height='32' onclick="showMenu();" >
+	</div>
+</td>
+</tr>
+
+<tr>
+<td rowspan='7' class='imgtd' id='maptd' valign='top' >
+	<img id='mymap' src='' width='800'>
+</td>
+<td class='trow2' align='center' id='td0' valign='top'>
+	<div id='td6'>Έτοιμοι΄Πατήστε "Ας παίξουμε"</div>
+</td>
+</tr>
+
+
+<tr>
+<td class='trow' id='td1'><select id="pper" class='db'></select></td>
+</tr>
+
+<tr>
+<td class='trow' id='td2'><select id="nomoi" class='db'></select></td>
+</tr>
+
+<tr>
+<td class='trow' id='td3'><select id="poleis" class='db'></select></td>
+</tr>
+
+<tr>
+<td class='trow2'></td>
+</tr>
+
+<tr>
+<td class='trow2' valign='center' id='td5'>
+<button class='db' id='subm' onclick="handleSubm();">БΑς ξεκινήσουμε</button>
+</td>
+</tr>
+
+
+<tr>
+<td class='trow2' valign='top' id='td4'>
+<button class='ds' id='dsol' onclick="ShowSol();">Να δω τη λύση...</button>
+</td>
+</tr>
+
+<td class='tdbottom'> Πηγή χαρτών: www.wikipedia.org</td>
+<td class='tdbottom' align='right'> (c) 2020 :: Κωστάρας Γιώργος :: gvkostaras@gmail.com</td>
+
+</tr>
+
+</table>
+
+</div>
+
+
+<div id='intro'  style='height:100%; width:100%;'>
+<table border='0' width='100%' height='100%' cellpadding='0' cellspacing='0' class='banner2'>
+	<tr>
+	<td id='td8' align='center'>
+	<img src='images/intro.gif' height='100%' id='introim'>
+	</td>
+	</tr>
+
+	<tr><td align='center' valign='center' height='15%'>
+          <button class='msgbn' style='' onclick="changeLevel(1);Init(1);">Εύκολο</button>
+          <button class='msgbn' style='' onclick="changeLevel(2);Init(1);">Μεσαίο</button>
+          <button class='msgbn' style='' onclick="changeLevel(3);Init(1);">Δύσκολο</button>
+
+	</td>
+     </tr>
+  </table>
+</div>
+
+
+<div id='arrow' class='dmsg0' style="border: none;">
+   <img src='images/redarrow.gif' width='72' height='120'>
+</div>
+
+
+<div id='banner' class='dmsg' style="padding: 20px; background-color: #FFFFFF">
+   <table border='0' width='100%' height='100%' cellpadding='0' cellspacing='0' class='banner'>
+     <tr class='banner'>
+       <td bgcolor='ffffff' class='banner' align='center' style="font: bold 42px Arial, sans-serif;">Το παιχνίδι ολοκληρώθηκε!
+      <p style="font: bold 42px Arial, sans-serif;">Συγκέντρωσες
+      <span style="font: bold 82px Arial, sans-serif; color: red;" id='myscore'> 100 </span> <span id='myscore2'>βαθμούς </span></p>
+      <button class='msgbn' style='' onclick="InitializeGame();Init(1);">Εντάξει!</button></td>
+     </tr>
+  </table>
+</div>
+
+
+<!--   -->
+<div id='menu' style='width:40%;'>
+<table class='menut' width='100%'>
+
+<tr>
+<td align='center' style='color: #FFFFFF; font: bold 24px Arial, sans-serif; padding:4px;'> 
+Μενού Επιλογών
+</td>
+</tr>
+
+<tr>
+<td align='center'> 
+<button class="menub" style='background-color: #33cc33;' onclick="InitializeGame();Init(0);">Νέο Παιχνίδι</button><br>&nbsp;
+</td>
+</tr>
+
+
+
+<tr>
+<td class='menutd'> 
+Μέγεθος Οθόνης
+</td>
+</tr>
+<tr>
+<td align='center'> 
+<button class="menub" style='background-color: #3399ff;' onclick="closeFullscreen(); FixGrid();Init(1);">Κανονική</button><br>
+<button class="menub" style='background-color: #3399ff;' onclick="openFullscreen(); FixGrid();Init(1);">Πλήρης</button><br>&nbsp;
+</td>
+</tr>
+
+<tr>
+<td class='menutd'> 
+Επίπεδο
+</td>
+</tr>
+<tr>
+<td align='center'> 
+<button class='menub' style='background-color: orange;' onclick="changeLevel(1);Init(1);">Εύκολο</button><br>
+<button class='menub' style='background-color: orange;' onclick="changeLevel(2);Init(1);">Μεσαίο</button><br>
+<button class='menub' style='background-color: orange;' onclick="changeLevel(3);Init(1);">Δύσκολο</button>
+</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<script>
+InitializeGame();
+showIntro();
+</script>
+
+
+
+</body>
+</html> 
