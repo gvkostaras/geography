@@ -241,7 +241,6 @@ hideElem('banner');
 hideElem('intro');
 hideElem('menu');
 showElem('gameboard');
-changeMap(0);
 
 if (level==0){level=1;}
 myL=level;
@@ -258,7 +257,7 @@ if (status==0){
         document.getElementById("td6").innerHTML="Επίπεδο:&nbsp;<span class='score'>"+ myL + 
 
 "</span>&nbsp;-&nbsp;Έτοιμοι; Πατήστε 'Ας Παίξουμε!'";
-
+	changeMap(0);
 } else { 
 	hideElem('arrow');
 	document.getElementById("nomoi").disabled=false;
