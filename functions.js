@@ -189,11 +189,6 @@ document.getElementById("banner").style.height=maxH*0.9+"px";
 
 document.getElementById("introim").style.height=window.innerHeight*0.82+"px";
 
-//document.getElementById("intro").style.width=window.innerWidth*0.95+"px";
-//document.getElementById("intro").style.height=innerHeight*0.96+"px";
-//document.getElementById("intro").style.left=window.innerWidth*0.10-20+"px";
-//document.getElementById("intro").style.top=maxH*0.05-20+"px";
-
 }
 
 function InitializeGame(){ 
@@ -203,7 +198,7 @@ function InitializeGame(){
    shuffleMap();
    score=0;
    status=0;
-   m=48;
+   m=0;
    document.getElementById("myscore").innerHTML=score;
 }
   
