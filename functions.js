@@ -1,5 +1,8 @@
-﻿var elem = document.documentElement;
+var elem = document.documentElement;
 var level=0;
+var audioV = new Audio('sounds/V.mp3');
+var audioX = new Audio('sounds/X.mp3');
+
 
 
 /* View in fullscreen */
@@ -189,6 +192,11 @@ document.getElementById("banner").style.height=maxH*0.9+"px";
 
 document.getElementById("introim").style.height=window.innerHeight*0.82+"px";
 
+//document.getElementById("intro").style.width=window.innerWidth*0.95+"px";
+//document.getElementById("intro").style.height=innerHeight*0.96+"px";
+//document.getElementById("intro").style.left=window.innerWidth*0.10-20+"px";
+//document.getElementById("intro").style.top=maxH*0.05-20+"px";
+
 }
 
 function InitializeGame(){ 
@@ -214,7 +222,11 @@ FixGrid();
 function ShowHeader(){
 if (level<1){level=1;}
 myL=level; 
-document.getElementById("td6").innerHTML="Επίπεδο:&nbsp;<span class='score'>"+ myL + "</span>&nbsp;::&nbsp;Ερώτηση&nbsp;<span class='score'>" + m+"/51</span>&nbsp;::&nbsp;Σκορ:&nbsp;<span class='score'>"+score+" </span>";
+document.getElementById("td6").innerHTML="Επίπεδο:&nbsp;<span class='score'>"+ myL + 
+
+"</span>&nbsp;::&nbsp;Ερώτηση&nbsp;<span class='score'>" + m
+
++"/51</span>&nbsp;::&nbsp;Σκορ:&nbsp;<span class='score'>"+score+" </span>";
 }
 
 function changeLevel(l){
@@ -243,7 +255,9 @@ if (status==0){
         document.getElementById("td2").style.backgroundColor = '#323232';
         document.getElementById("td3").style.backgroundColor = '#323232';
         document.getElementById("subm").innerHTML="Ας Παίξουμε!";
-        document.getElementById("td6").innerHTML="Επίπεδο:&nbsp;<span class='score'>"+ myL + "</span>&nbsp;-&nbsp;Έτοιμοι; Πατήστε 'Ας Παίξουμε!'";
+        document.getElementById("td6").innerHTML="Επίπεδο:&nbsp;<span class='score'>"+ myL + 
+
+"</span>&nbsp;-&nbsp;Έτοιμοι; Πατήστε 'Ας Παίξουμε!'";
 
 } else { 
 	hideElem('arrow');
@@ -338,11 +352,13 @@ if (status==2){
     else {
        document.getElementById("td3").style.backgroundColor = 'red';
     }
-    if (miniscore==3){score=Number(score)+Number(myL)*2-1};
+    if (miniscore==3){score=Number(score)+Number(myL)*2-1; audioV.play();} else {audioX.play();};
     ShowHeader();
     
 document.getElementById("myscore").innerHTML=score;
-    if (score=='1'){document.getElementById("myscore2").innerHTML="βαθμό";} else {document.getElementById("myscore2").innerHTML="βαθμούς";}
+    if (score=='1'){document.getElementById("myscore2").innerHTML="βαθμό";} else 
+
+{document.getElementById("myscore2").innerHTML="βαθμούς";}
 
     status=1;
     document.getElementById("subm").innerHTML="Επόμενο >>>";
