@@ -94,7 +94,7 @@ padding: 2px;
 display: flex; 
 justify-content: center; 
 align-items: center;
-background-color: #FFFFCC;
+
 }
 
 
@@ -168,15 +168,25 @@ button.lb{
  height: 100%;
 }
 
-
-
-
 button.menub{
- font: bold 16px Arial, sans-serif;
- padding: 12px;
+ border: solid 1px #aaaaaa;
+ border-radius: 3px;
+ font: 16px Arial, sans-serif;
+ padding: 4px;
  margin:4px;
  height: 100%;
- width:75%
+ width:75%;
+}
+
+button.menub2{
+ border: solid 1px #aaaaaa;
+ border-radius: 3px;
+ font: 16px Arial, sans-serif;
+ padding: 4px;
+ margin:4px;
+ height: 100%;
+ width:75%;
+ margin-bottom:12px;
 }
 
 
