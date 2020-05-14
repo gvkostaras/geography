@@ -2,8 +2,8 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="styles/style.css">
-<script src="script/geodata.js"></script> 
-<script src="script/functions.js"></script>  
+<script src="script/geodata.txt"></script> 
+<script src="script/functions.txt"></script>  
 </head>
 <html>
 <body onresize="FixGrid()">
@@ -107,9 +107,9 @@
 </div>
 
 
-<!--   -->
+<!-- MENOY  -->
 <div id='menu' style='width:40%;'>
-<table class='menut' width='100%'>
+<table class='menut' width='100%' border='0'>
 
 <tr>
 <td align='center' style='color: #FFFFFF; font: bold 24px Arial, sans-serif; padding:4px;'> 
@@ -119,7 +119,7 @@
 
 <tr>
 <td align='center'> 
-<button class="menub" style='background-color: #33cc33;' onclick="InitializeGame();Init(0);">Νέο Παιχνίδι</button><br>&nbsp;
+<button id='mb1' class="menub2" style='background-color: #ADFF2F;' onclick="InitializeGame();Init(0);">Νέο Παιχνίδι</button>
 </td>
 </tr>
 
@@ -132,8 +132,8 @@
 </tr>
 <tr>
 <td align='center'> 
-<button class="menub" style='background-color: #3399ff;' onclick="closeFullscreen(); FixGrid();Init(1);">Κανονική</button><br>
-<button class="menub" style='background-color: #3399ff;' onclick="openFullscreen(); FixGrid();Init(1);">Πλήρης</button><br>&nbsp;
+<button id='mb2' class="menub" style='background-color: #3399ff;' onclick="closeFullscreen(); FixGrid();Init(1);">Κανονική</button><br>
+<button id='mb3' class="menub2" style='background-color: #3399ff;' onclick="openFullscreen(); FixGrid();Init(1);">Πλήρης</button>
 </td>
 </tr>
 
@@ -144,9 +144,9 @@
 </tr>
 <tr>
 <td align='center'> 
-<button class='menub' style='background-color: orange;' onclick="changeLevel(1);Init(1);">Εύκολο</button><br>
-<button class='menub' style='background-color: orange;' onclick="changeLevel(2);Init(1);">Μεσαίο</button><br>
-<button class='menub' style='background-color: orange;' onclick="changeLevel(3);Init(1);">Δύσκολο</button>
+<button id='mb4' class='menub' style='background-color: orange;' onclick="changeLevel(1);Init(1);">Εύκολο</button><br>
+<button id='mb5' class='menub' style='background-color: orange;' onclick="changeLevel(2);Init(1);">Μεσαίο</button><br>
+<button id='mb6' class='menub' style='background-color: orange;' onclick="changeLevel(3);Init(1);">Δύσκολο</button>
 </td>
 </tr>
 
